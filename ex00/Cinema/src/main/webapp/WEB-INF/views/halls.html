@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Halls</title>
+</head>
+<body>
+<form method="post">
+    <label for="seats_number">Количество мест</label>
+    <input type="text" name="seats" id="seats_number">
+    <button>Добавить</button>
+</form>
+<table>
+    <tr>
+        <td>id</td>
+        <td>seats</td>
+    </tr>
+    <tr th:each="hall, iter: ${halls}">
+        <td th:text="${hall.id}"></td>
+        <td th:text="${hall.seats}"></td>
+    </tr>
+</table>
+</body>
+</html>

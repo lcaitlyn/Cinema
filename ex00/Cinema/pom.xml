@@ -68,6 +68,11 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.4</version>
+        </dependency>
+        <dependency>
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf-spring5</artifactId>
             <version>3.1.1.RELEASE</version>
