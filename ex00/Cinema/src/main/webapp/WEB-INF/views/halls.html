@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Halls</title>
 </head>
 <body>
-<form method="post">
-    <label for="seats_number">Количество мест</label>
-    <input type="text" name="seats" id="seats_number">
+<form method="post" action="/admin/panel/halls/add" th:object="${hall}">
+    <label for="seats">Количество мест: </label>
+    <input type="text" name="seats" id="seats" th:field="*{seats}">
     <button>Добавить</button>
 </form>
 <table>
