@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Sessions</title>
+</head>
+<body>
+<a href="/admin/panel/sessions/add">Добавить новый сеанс</a>
+<table>
+  <tr>
+    <td>id</td>
+    <td>time</td>
+    <td>price</td>
+    <td>hall</td>
+  </tr>
+  <tr th:each="movieSession, iter: ${movieSessions}">
+    <td th:text="${movieSession.id}"></td>
+    <td th:text="${movieSession.time}"></td>
+    <td th:text="${movieSession.price}"></td>
+    <td th:text="${movieSession.hall.name}"></td>
+  </tr>
+</table>
+</body>
+</html>

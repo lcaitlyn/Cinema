@@ -1,0 +1,120 @@
+Index: src/main/java/edu/school21/cinema/controllers/HallController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package edu.school21.cinema.controllers;\r\n\r\nimport edu.school21.cinema.models.Hall;\r\nimport edu.school21.cinema.repositories.HallRepository;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.web.bind.annotation.GetMapping;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\n\r\nimport java.util.List;\r\n\r\n@Controller\r\n@RequestMapping(\"/admin/panel/halls\")\r\npublic class HallController {\r\n\r\n    @Autowired\r\n    HallRepository hallRepository;\r\n\r\n    @GetMapping\r\n    public String halls(Model model) {\r\n        List<Hall> halls = hallRepository.findAll();\r\n        model.addAttribute(\"halls\", halls);\r\n        return \"halls\";\r\n    }\r\n\r\n    @GetMapping(\"/add\")\r\n    public String fuck() {\r\n        return \"fuck\";\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/edu/school21/cinema/controllers/HallController.java b/src/main/java/edu/school21/cinema/controllers/HallController.java
+--- a/src/main/java/edu/school21/cinema/controllers/HallController.java	(revision 7cee9738741cbfe0148636ebce8d1d1accb019b9)
++++ b/src/main/java/edu/school21/cinema/controllers/HallController.java	(date 1680295340489)
+@@ -2,11 +2,14 @@
+ 
+ import edu.school21.cinema.models.Hall;
+ import edu.school21.cinema.repositories.HallRepository;
++import edu.school21.cinema.services.HallService;
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Controller;
+ import org.springframework.ui.Model;
+ import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.PostMapping;
+ import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.RequestParam;
+ 
+ import java.util.List;
+ 
+@@ -15,19 +18,20 @@
+ public class HallController {
+ 
+     @Autowired
+-    HallRepository hallRepository;
++    HallService hallService;
+ 
+     @GetMapping
+     public String halls(Model model) {
+-        List<Hall> halls = hallRepository.findAll();
++        List<Hall> halls = hallService.getAll();
+         model.addAttribute("halls", halls);
+         return "halls";
+     }
+ 
+-    @GetMapping("/add")
+-    public String fuck() {
+-        return "fuck";
++    @PostMapping("/add")
++    public String fuck(@RequestParam("seats") String seats, Model model) {
++        hallService.addHall(seats);
++        System.out.println(seats);
++        return "halls";
+     }
+-
+ 
+ }
+Index: src/main/webapp/WEB-INF/views/halls.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Halls</title>\r\n</head>\r\n<body>\r\n<form method=\"post\">\r\n    <label for=\"seats_number\">Количество мест</label>\r\n    <input type=\"text\" name=\"seats\" id=\"seats_number\">\r\n    <button>Добавить</button>\r\n</form>\r\n<table>\r\n    <tr>\r\n        <td>id</td>\r\n        <td>seats</td>\r\n    </tr>\r\n    <tr th:each=\"hall, iter: ${halls}\">\r\n        <td th:text=\"${hall.id}\"></td>\r\n        <td th:text=\"${hall.seats}\"></td>\r\n    </tr>\r\n</table>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/views/halls.html b/src/main/webapp/WEB-INF/views/halls.html
+--- a/src/main/webapp/WEB-INF/views/halls.html	(revision 7cee9738741cbfe0148636ebce8d1d1accb019b9)
++++ b/src/main/webapp/WEB-INF/views/halls.html	(date 1680295052039)
+@@ -5,20 +5,20 @@
+     <title>Halls</title>
+ </head>
+ <body>
+-<form method="post">
+-    <label for="seats_number">Количество мест</label>
+-    <input type="text" name="seats" id="seats_number">
+-    <button>Добавить</button>
+-</form>
+-<table>
+-    <tr>
+-        <td>id</td>
+-        <td>seats</td>
+-    </tr>
+-    <tr th:each="hall, iter: ${halls}">
+-        <td th:text="${hall.id}"></td>
+-        <td th:text="${hall.seats}"></td>
+-    </tr>
+-</table>
++    <form enctype="multipart/form-data" method="post" action="/admin/panel/halls/add">
++        <label for="seats_number">Количество мест</label>
++        <input type="text" name="seats" id="seats_number">
++        <button>Добавить</button>
++    </form>
++    <table>
++        <tr>
++            <td>id</td>
++            <td>seats</td>
++        </tr>
++        <tr th:each="hall, iter: ${halls}">
++            <td th:text="${hall.id}"></td>
++            <td th:text="${hall.seats}"></td>
++        </tr>
++    </table>
+ </body>
+ </html>
+\ No newline at end of file
+Index: src/main/java/edu/school21/cinema/repositories/HallRepositoryImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package edu.school21.cinema.repositories;\r\n\r\nimport edu.school21.cinema.models.Hall;\r\nimport org.hibernate.Session;\r\nimport org.hibernate.SessionFactory;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Repository;\r\n\r\nimport javax.transaction.Transactional;\r\nimport java.util.List;\r\nimport java.util.Optional;\r\n\r\n@Repository\r\n@Transactional\r\npublic class HallRepositoryImpl implements HallRepository {\r\n\r\n    @Autowired\r\n    private SessionFactory sessionFactory;\r\n\r\n    @Override\r\n    public Optional<Hall> findById(Long id) {\r\n        return Optional.empty();\r\n    }\r\n\r\n    @Override\r\n    public List<Hall> findAll() {\r\n        Session session = sessionFactory.getCurrentSession();\r\n\r\n        List<Hall> halls = session.createQuery(\"from Hall\").getResultList();\r\n\r\n\r\n        return halls;\r\n    }\r\n\r\n    @Override\r\n    public void save(Hall entity) {\r\n        Session session = sessionFactory.getCurrentSession();\r\n        session.save(entity);\r\n    }\r\n\r\n    @Override\r\n    public void update(Hall entity) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void delete(Long id) {\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/edu/school21/cinema/repositories/HallRepositoryImpl.java b/src/main/java/edu/school21/cinema/repositories/HallRepositoryImpl.java
+--- a/src/main/java/edu/school21/cinema/repositories/HallRepositoryImpl.java	(revision 7cee9738741cbfe0148636ebce8d1d1accb019b9)
++++ b/src/main/java/edu/school21/cinema/repositories/HallRepositoryImpl.java	(date 1680294838005)
+@@ -25,10 +25,7 @@
+     @Override
+     public List<Hall> findAll() {
+         Session session = sessionFactory.getCurrentSession();
+-
+         List<Hall> halls = session.createQuery("from Hall").getResultList();
+-
+-
+         return halls;
+     }
+ 

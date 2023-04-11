@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add movie</title>
+</head>
+<body>
+<form method="post" action="/admin/panel/films/add" th:object="${movie}">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" th:field="*{name}"><br>
+        <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    </div>
+    <div>
+        <label for="releaseDate">ReleaseDate: </label>
+        <input type="date" name="releaseDate" id="releaseDate" th:field="*{releaseDate}"><br>
+        <span style="color: red" th:if="${#fields.hasErrors('releaseDate')}" th:errors="*{releaseDate}"></span>
+    </div>
+    <div>
+        <label for="ageLimit">AgeLimit: </label>
+        <input type="text" name="ageLimit" id="ageLimit" th:field="*{ageLimit}"><br>
+        <span style="color: red" th:if="${#fields.hasErrors('ageLimit')}" th:errors="*{ageLimit}"></span>
+    </div>
+    <div>
+        <label for="description">Description: </label>
+        <input type="text" name="description" id="description" th:field="*{description}"><br>
+        <span style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+    </div>
+    <button type="submit">Добавить</button>
+</form>
+</body>
+</html>

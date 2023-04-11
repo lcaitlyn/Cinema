@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Movie Session</title>
+</head>
+<body>
+<form method="post" action="/admin/panel/sessions/add" th:object="${movieSession}">
+    <div>
+        <label for="time">Time: </label>
+        <input type="datetime-local" name="time" id="time" th:field="*{time}"><br>
+        <span style="color: red" th:if="${#fields.hasErrors('time')}" th:errors="*{time}"></span>
+    </div>
+    <div>
+        <label for="price">Price: </label>
+        <input type="text" name="price" id="price" th:field="*{price}"><br>
+        <span style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
+    </div>
+    <div>
+        <label for="hall">Hall: </label>
+        <select name="hall" id="hall">
+            <option value="">Выберите Зал</option>
+            <option th:each="hall : ${halls}"
+                    th:value="${hall}"
+                    th:text="${hall.id}">Зал №</option>
+        </select>
+    </div>
+    <button type="submit">Добавить</button>
+</form>
+</body>
+</html>

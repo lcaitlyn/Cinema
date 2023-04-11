@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Halls</title>
+</head>
+<body>
+<form method="post" action="/admin/panel/halls/add" th:object="${hall}">
+    <div>
+        <label for="id">Номер зала: </label>
+        <input type="text" name="id" id="id" th:field="*{id}"><br>
+        <span style="color: red" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></span>
+    </div>
+    <div>
+        <label for="seats">Количество мест: </label>
+        <input type="text" name="seats" id="seats" th:field="*{seats}"><br>
+        <span style="color: red" th:if="${#fields.hasErrors('seats')}" th:errors="*{seats}"></span>
+    </div>
+    <p class="help-block" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></p>
+    <button>Добавить</button>
+</form>
+<div>
+</div>
+<table>
+    <tr>
+        <td>id</td>
+        <td>seats</td>
+    </tr>
+    <tr th:each="hall, iter: ${halls}">
+        <td th:text="${hall.id}"></td>
+        <td th:text="${hall.seats}"></td>
+    </tr>
+</table>
+</body>
+</html>

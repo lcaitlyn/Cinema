@@ -1,9 +1,10 @@
+
 create schema if not exists cinema;
 
 create table if not exists cinema.hall
 (
-    id    serial primary key,
-    seats integer
+    id    serial unique not null,
+    seats integer not null
 );
 
 create table if not exists cinema.movie

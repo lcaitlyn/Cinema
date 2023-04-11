@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+<a href="/admin/panel/films/add">Добавить нового пользователя</a>
+<table>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+        <td>release_date</td>
+        <td>age_limit</td>
+        <td>description</td>
+    </tr>
+    <tr th:each="movie, iter: ${movies}">
+        <td th:text="${movie.id}"></td>
+        <td th:text="${movie.name}"></td>
+        <td th:text="${movie.releaseDate}"></td>
+        <td th:text="${movie.ageLimit}"></td>
+        <td th:text="${movie.description}"></td>
+    </tr>
+</table>
+</body>
+</html>
