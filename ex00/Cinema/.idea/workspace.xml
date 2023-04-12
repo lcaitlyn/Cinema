@@ -9,26 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="782ad897-3c4a-42d1-b610-9948dda810cc" name="Changes" comment="Изменил схему и сущность MovieSession">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/chat.WJMuAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/chat.WJMuAA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/cinema.8fLqrg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/cinema.8fLqrg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/company.fTynOA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/currencyexchanger.vsmasQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/currencyexchanger.vsmasQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/weatherviewer.BqNqmQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c4a9f1fb-c6f3-4a1f-b989-ac92afc000de/storage_v2/_src_/database/postgres.edMnLQ/schema/weatherviewer.BqNqmQ.meta" afterDir="false" />
+    <list default="true" id="782ad897-3c4a-42d1-b610-9948dda810cc" name="Changes" comment="Продолжаю делать">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school21/cinema/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school21/cinema/config/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school21/cinema/controllers/HallController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school21/cinema/controllers/HallController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school21/cinema/controllers/IndexContoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school21/cinema/controllers/IndexContoller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school21/cinema/controllers/MovieSessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school21/cinema/controllers/MovieSessionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-movie-session.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-movie-session.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +82,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.84" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.84" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Cinema:war">
@@ -204,7 +188,7 @@
       <workItem from="1680984509372" duration="2208000" />
       <workItem from="1681129911603" duration="610000" />
       <workItem from="1681142463237" duration="7583000" />
-      <workItem from="1681282124654" duration="988000" />
+      <workItem from="1681282124654" duration="2628000" />
     </task>
     <task id="LOCAL-00001" summary="Настроил HallRepository и запустил, чтобы работал с ДБ">
       <created>1680294491995</created>
@@ -220,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681282706616</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Продолжаю делать">
+      <created>1681291948452</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681291948452</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +231,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Настроил HallRepository и запустил, чтобы работал с ДБ" />
     <MESSAGE value="Изменил схему и сущность MovieSession" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменил схему и сущность MovieSession" />
+    <MESSAGE value="Продолжаю делать" />
+    <option name="LAST_COMMIT_MESSAGE" value="Продолжаю делать" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -259,6 +251,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/edu/school21/cinema/utils/HallConverter.java</url>
           <line>17</line>
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/school21/cinema/controllers/MovieSessionController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/edu/school21/cinema/models/Movie.java</url>

@@ -17,21 +17,21 @@
         <span style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
     </div>
     <div>
-        <label for="movie">Movie: </label>
-        <select name="movie" id="movie" th:field="*{movie}" th:object="${movieSession}">
-            <option value="">Выберите фильм</option>
-            <option th:each="movie : ${movies}"
-                    th:value="${movie}"
-                    th:text="${movie.name}"></option>
-        </select>
-    </div>
-    <div>
         <label for="hall">Hall: </label>
         <select name="hall" id="hall" th:field="*{hall}" th:object="${movieSession}">
             <option value="">Выберите зал</option>
             <option th:each="hall : ${halls}"
                     th:value="${hall}"
                     th:text="${hall.id}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="movie">Movie: </label>
+        <select name="movie" id="movie" th:field="*{movie}" th:object="${movieSession}">
+            <option value="">Выберите фильм</option>
+            <option th:each="movie : ${movies}"
+                    th:value="${movie}"
+                    th:text="${movie.name}"></option>
         </select>
     </div>
     <button type="submit">Добавить</button>
