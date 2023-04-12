@@ -18,8 +18,9 @@ create table if not exists cinema.movie
 
 create table if not exists cinema.moviesession
 (
-    id      serial primary key,
-    time    timestamp,
-    price   integer,
-    hall_id integer references cinema.hall (id)
+    id          serial primary key,
+    time        timestamp,
+    price       integer,
+    hall_id     integer references cinema.hall (id),
+    movie_id    integer references cinema.movie (id)
 );

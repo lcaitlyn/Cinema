@@ -27,4 +27,8 @@ public class MovieSession {
     @ManyToOne
     @NotNull(message = "Заполните поле")
     private Hall hall;
+
+    @ManyToOne
+    @NotNull(message = "Заполните поле")
+    private Movie movie;
 }
