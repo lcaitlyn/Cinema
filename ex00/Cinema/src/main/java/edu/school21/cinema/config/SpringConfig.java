@@ -1,5 +1,6 @@
 package edu.school21.cinema.config;
 
+import edu.school21.cinema.utils.HallConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -7,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -96,5 +98,11 @@ public class SpringConfig implements WebMvcConfigurer {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(sessionFactory().getObject());
         return transactionManager;
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        HallConverter hallConverter = applicationContext.getBean(HallConverter.class);
+        registry.addConverter(hallConverter);
     }
 }

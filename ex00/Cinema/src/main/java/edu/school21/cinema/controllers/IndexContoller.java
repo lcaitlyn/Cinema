@@ -12,4 +12,9 @@ public class IndexContoller {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/admin/panel")
+    public String admin() {
+        return "admin-panel";
+    }
 }

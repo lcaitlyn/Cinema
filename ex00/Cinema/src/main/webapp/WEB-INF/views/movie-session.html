@@ -11,12 +11,14 @@
     <td>id</td>
     <td>time</td>
     <td>price</td>
+    <td>movie</td>
     <td>hall</td>
   </tr>
   <tr th:each="movieSession, iter: ${movieSessions}">
     <td th:text="${movieSession.id}"></td>
     <td th:text="${movieSession.time}"></td>
     <td th:text="${movieSession.price}"></td>
+    <td th:text="${movieSession.movie.name}"></td>
     <td th:text="${movieSession.hall.name}"></td>
   </tr>
 </table>

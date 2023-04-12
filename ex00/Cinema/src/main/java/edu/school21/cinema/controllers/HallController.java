@@ -35,19 +35,6 @@ public class HallController {
 
     @PostMapping("/add")
     public String fuck(@ModelAttribute @Valid Hall hall, BindingResult bindingResult) {
-
-//        if (true) {
-//            bindingResult.reject("id", "такой зал уже есть");
-//            return "redirect:/admin/panel/halls";
-//        }
-//
-//
-//        if (bindingResult.hasErrors()) {
-//            bindingResult.addError(new ObjectError("id", "такое уже есть"));
-//            return "hall";
-//        }
-
-
         if (!bindingResult.hasErrors()) {
             hallDao.save(hall);
         }
