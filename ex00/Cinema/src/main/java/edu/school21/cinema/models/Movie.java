@@ -30,5 +30,10 @@ public class Movie {
     @NotNull(message = "Заполните поле")
     private Integer ageLimit;
 
+    @Column(name = "movie_image_id")
+    @OneToOne
+    @NotNull(message = "Добавьте постер")
+    private MovieImage image;
+
     private String description;
 }

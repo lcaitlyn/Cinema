@@ -6,26 +6,31 @@
     <title>Add movie</title>
 </head>
 <body>
-<form method="post" action="/admin/panel/films/add" th:object="${movie}">
+<form method="post" action="/admin/panel/films/add" enctype="multipart/form-data" th:object="${movie}">
     <div>
-        <label for="name">Name: </label>
+        <label for="name">Название: </label>
         <input type="text" name="name" id="name" th:field="*{name}"><br>
         <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
     </div>
     <div>
-        <label for="releaseDate">ReleaseDate: </label>
+        <label for="releaseDate">Дата выхода: </label>
         <input type="date" name="releaseDate" id="releaseDate" th:field="*{releaseDate}"><br>
         <span style="color: red" th:if="${#fields.hasErrors('releaseDate')}" th:errors="*{releaseDate}"></span>
     </div>
     <div>
-        <label for="ageLimit">AgeLimit: </label>
+        <label for="ageLimit">Возрастной лимит: </label>
         <input type="text" name="ageLimit" id="ageLimit" th:field="*{ageLimit}"><br>
         <span style="color: red" th:if="${#fields.hasErrors('ageLimit')}" th:errors="*{ageLimit}"></span>
     </div>
     <div>
-        <label for="description">Description: </label>
+        <label for="description">Описание: </label>
         <input type="text" name="description" id="description" th:field="*{description}"><br>
         <span style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+    </div>
+    <div>
+        <label for="movieImage">Постер: </label>
+        <input type="file" name="movieImage" id="movieImage">
+        <span style="color: red" th:if="${#fields.hasErrors('movieImage')}" th:errors="*{movieImage}"></span>
     </div>
     <button type="submit">Добавить</button>
 </form>
